@@ -7,16 +7,16 @@
 		<%end%>
 	</p><hr>
 -->	
-	<table><tr><th><h2><%= @event.title %></h2></th></tr>
+	<table class="table"><tr><th><h2><%= @event.title %></h2></th></tr>
 		<tr><td><%= @event.time %></td><td><%= @event.date %></td><td><%= @event.location%></td></tr>
- <tr><td>  <%= @event.description %></td></tr>
+ <tr><td colspan="3">  <%= @event.description %></td></tr>
 </table>
 
-
+<p>
  
-<%= link_to 'Edit Event', edit_event_path(@event), class:"btn btn-info" %> 
-<%end%>
-<hr>
+<%= link_to 'Edit Event', edit_event_path(@event), class:"btn btn-default" %> 
+<p>
+	<hr>
 <%= link_to 'Back to Events', events_path, class:"btn btn-info" %>
 
 </div>
