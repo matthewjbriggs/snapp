@@ -1,10 +1,11 @@
 class ImagesController < ApplicationController
   def new
+    @user = current_user
     @image = Image.new
   end
 
   def create
-    @image = Image.new(params[:image].permit(:file))
+    @image = Image.new(image_params)
     @image.save
   end
 
@@ -29,5 +30,10 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
+  end
+  
+  private
+  def image_params
+    params.require(:image).permit(:file)
   end
 end
