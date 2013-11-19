@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
+    @image.user = current_user
     @image.save
   end
 
